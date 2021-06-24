@@ -40,4 +40,5 @@ class BasePage:
         assert self.browser.current_url == link, f'УРЛ не совпадает'
 
     def click(self, how, what):
+        WebDriverWait(self.browser, 10, 1, TimeoutException).until(EC.element_to_be_clickable((how, what)))
         self.browser.find_element(how, what).click()

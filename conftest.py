@@ -30,5 +30,5 @@ def browser(request):
     browser.maximize_window()
     yield browser
     print("\nquit browser..")
-    time.sleep(3)
+    time.sleep(1)
     browser.quit()
