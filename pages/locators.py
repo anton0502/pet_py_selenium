@@ -6,4 +6,4 @@ class BasePageLocators:
 
 
 class MainPageLocators:
-    MAIM_PAGE_LOGO_LINK = (By.CSS_SELECTOR, 'header > aи')
+    MAIM_PAGE_LOGO_LINK = (By.CSS_SELECTOR, 'header > a')
