@@ -35,3 +35,9 @@ class BasePage:
             return False
 
         return True
+
+    def correct_url(self, link):
+        assert self.browser.current_url == link, f'УРЛ не совпадает'
+
+    def click(self, how, what):
+        self.browser.find_element(how, what).click()
