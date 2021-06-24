@@ -3,5 +3,6 @@ from pages.locators import MainPageLocators
 
 
 class MainPage(BasePage):
-    def __init__(self, *args, **kwargs):
-        super(MainPage, self).__init__(*args, **kwargs)
+    def should_be_correct_url(self):
+        url = self.browser.current_url
+        assert url == 'http://automationpractice.com/index.php', f'УРЛ не совпадает'

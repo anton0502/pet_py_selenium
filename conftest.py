@@ -1,3 +1,5 @@
+import time
+
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -25,6 +27,8 @@ def browser(request):
         browser = webdriver.Firefox(firefox_profile=fp)
     else:
         raise pytest.UsageError("--browser_name should be chrome or firefox")
+    browser.maximize_window()
     yield browser
     print("\nquit browser..")
+    time.sleep(3)
     browser.quit()
