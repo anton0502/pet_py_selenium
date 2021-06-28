@@ -1,4 +1,4 @@
-from selenium.common.exceptions import NoSuchElementException, TimeoutException
+from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -12,29 +12,11 @@ class BasePage:
     def open(self):
         self.browser.get(self.url)
 
-    def is_element_present(self, how, what):
-        try:
-            self.browser.find_element(how, what)
-        except NoSuchElementException:
-            return False
-        return True
+    def back(self):
+        self.browser.back()
 
-    def is_not_element_present(self, how, what, timeout=4):
-        try:
-            WebDriverWait(self.browser, timeout).until(EC.presence_of_element_located((how, what)))
-        except TimeoutException:
-            return True
-
-        return False
-
-    def is_disappeared(self, how, what, timeout=4):
-        try:
-            WebDriverWait(self.browser, timeout, 1, TimeoutException). \
-                until_not(EC.presence_of_element_located((how, what)))
-        except TimeoutException:
-            return False
-
-        return True
+    def refresh(self):
+        self.browser.refresh()
 
     def correct_url(self, link):
         assert self.browser.current_url == link, f'УРЛ не совпадает'
@@ -42,3 +24,9 @@ class BasePage:
     def click(self, how, what):
         WebDriverWait(self.browser, 10, 1, TimeoutException).until(EC.element_to_be_clickable((how, what)))
         self.browser.find_element(how, what).click()
+
+    def is_element_present(self, how, what):
+        try:
+            self.browser.find_element(how, what)
+        except NoSuchElementException:
+            return True
