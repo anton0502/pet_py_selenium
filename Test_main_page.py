@@ -31,21 +31,12 @@ class TestLists:
     @allure.story('ElementsLink')
     def test_elements_link(self, browser):
         page = MainPage(browser, link)
-        with allure.step('Main page is open'):
-            allure.attach(browser.get_screenshot_as_png(),
-                          name='Screenshot', attachment_type=AttachmentType.PNG)
         page.should_open_elements()
-        with allure.step('Elements link is good'):
-            allure.attach(browser.get_screenshot_as_png(),
-                          name='Screenshot', attachment_type=AttachmentType.PNG)
 
     @allure.feature('TestListsElements')
     @allure.story('FormsLink')
     def test_forms_link(self, browser):
         page = MainPage(browser, link)
-        with allure.step('Main page is open'):
-            allure.attach(browser.get_screenshot_as_png(),
-                          name='Screenshot', attachment_type=AttachmentType.PNG)
         page.should_open_forms()
         with allure.step('Forms link is good'):
             allure.attach(browser.get_screenshot_as_png(),
@@ -55,9 +46,6 @@ class TestLists:
     @allure.story('AlertsLink')
     def test_alerts_link(self, browser):
         page = MainPage(browser, link)
-        with allure.step('Main page is open'):
-            allure.attach(browser.get_screenshot_as_png(),
-                          name='Screenshot', attachment_type=AttachmentType.PNG)
         page.should_open_alerts()
         with allure.step('Alerts link is good'):
             allure.attach(browser.get_screenshot_as_png(),
@@ -67,9 +55,6 @@ class TestLists:
     @allure.story('WidgetsLink')
     def test_widgets_link(self, browser):
         page = MainPage(browser, link)
-        with allure.step('Main page is open'):
-            allure.attach(browser.get_screenshot_as_png(),
-                          name='Screenshot', attachment_type=AttachmentType.PNG)
         page.should_open_widgets()
         with allure.step('Widgets link is good'):
             allure.attach(browser.get_screenshot_as_png(),
@@ -79,9 +64,6 @@ class TestLists:
     @allure.story('InteractionsLink')
     def test_interactions_link(self, browser):
         page = MainPage(browser, link)
-        with allure.step('Main page is open'):
-            allure.attach(browser.get_screenshot_as_png(),
-                          name='Screenshot', attachment_type=AttachmentType.PNG)
         page.should_open_interactions()
         with allure.step('Interactions link is good'):
             allure.attach(browser.get_screenshot_as_png(),
@@ -91,9 +73,6 @@ class TestLists:
     @allure.story('BookStoreLink')
     def test_book_store_link(self, browser):
         page = MainPage(browser, link)
-        with allure.step('Main page is open'):
-            allure.attach(browser.get_screenshot_as_png(),
-                          name='Screenshot', attachment_type=AttachmentType.PNG)
         page.should_open_book_store()
         with allure.step('Book store link is good'):
             allure.attach(browser.get_screenshot_as_png(),
