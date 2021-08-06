@@ -1,1 +1,1 @@
-# Пет проект на Пайтон плюс Селениум
+Pet project Python Pytest Selenium Allure
