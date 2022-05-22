@@ -24,12 +24,20 @@ class BasePage:
 
     def correct_url(self, link):
         with allure.step('correct_url'):
-            assert self.browser.current_url == link, f'УРЛ не совпадает'
+            if self.browser.current_url == link:
+                return True
+            if self.browser.current_url != link:
+                return False
 
     def click(self, how, what):
         with allure.step('click'):
             WebDriverWait(self.browser, 10, 1, TimeoutException).until(EC.element_to_be_clickable((how, what)))
             self.browser.find_element(how, what).click()
+
+    def write(self, how, what, text):
+        with allure.step('click'):
+            WebDriverWait(self.browser, 10, 1, TimeoutException).until(EC.element_to_be_clickable((how, what)))
+            self.browser.find_element(how, what).send_keys(text)
 
     def is_element_present(self, how, what):
         with allure.step('is_element_present'):
