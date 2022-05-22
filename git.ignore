@@ -1,0 +1,4 @@
+.pytest_cache
+.alluredir
+.Pet1
+.venv

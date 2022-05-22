@@ -5,6 +5,7 @@
       <excludeFolder url="file://$MODULE_DIR$/Pet_1" />
       <excludeFolder url="file://$MODULE_DIR$/Pet" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
+      <excludeFolder url="file://$MODULE_DIR$/.pytest_cache/v" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.10 (pet_py_selenium)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
