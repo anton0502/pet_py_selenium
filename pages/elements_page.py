@@ -10,7 +10,6 @@ class ElementsPage(BasePage):
             assert self.correct_url('https://demoqa.com/text-box'), \
                 f'The link is wrong or it has changed. Current url - {self.browser.current_url}'
 
-
     def should_contain_all_text_box_fields(self):
         self.should_contain_full_name_field()
         self.should_contain_email_field()
@@ -35,7 +34,8 @@ class ElementsPage(BasePage):
 
     def should_contain_current_address_field(self):
         with allure.step('should_contain_current_address_field'):
-            assert self.is_element_present(*ElementsPageLocators.CURRENT_ADDRESS), f'Field current address was not found'
+            assert self.is_element_present(*ElementsPageLocators.CURRENT_ADDRESS),\
+                f'Field current address was not found'
 
     def should_contain_permanent_address_field(self):
         with allure.step('should_contain_permanent_address_field'):
